@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Für Asli Baby ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* HIER Hello Kitty Hintergrund */
+            background-color: #ffc0cb; 
+            background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9983.jpg'); 
+            /* ÄNDERUNGEN HIER: */
+            background-size: cover; /* Macht das Bild so groß, dass es alles abdeckt */
+            background-repeat: no-repeat; /* Verhindert die Wiederholung */
+            background-position: center; /* Zentriert das Bild */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            border: 3px solid #ff69b4;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #yes-btn {
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+        }
+
+        #no-btn {
+            background-color: #dc3545;
+            color: white;
+            font-weight: bold;
+        }
+
+        #success-message {
+            display: none;
+        }
+
+        #my-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid #ff69b4;
+        }
+
+        #angry-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 150px;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="angry-popup">😡</div>
+
+    <div class="container">
+        <div id="question-part">
+            <h1>Asli Baby, willst du mein Valentinstags Date sein? 🥺👉👈</h1>
+            <div class="buttons">
+                <button id="yes-btn" onclick="sheSaidYes()">JA! ❤️</button>
+                <button id="no-btn" onclick="showAngryEmoji()">NEIN</button>
+            </div>
+        </div>
+
+        <div id="success-message">
+            <h1>YAAAY! Ich liebe dich! 💖🥰</h1>
+            <p>Freu mich auf unser Date! 😘</p>
+            <img id="my-image" src="wir.jpg" alt="Süßes Bild">
+        </div>
+    </div>
+
+    <script>
+        function showAngryEmoji() {
+            var popup = document.getElementById('angry-popup');
+            popup.style.display = 'block';
+            setTimeout(function() {
+                popup.style.display = 'none';
+            }, 1000);
+        }
+
+        function sheSaidYes() {
+            document.getElementById('question-part').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
